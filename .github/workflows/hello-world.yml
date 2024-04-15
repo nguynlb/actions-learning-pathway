@@ -6,4 +6,10 @@ jobs:
     steps:
       - name: Checkout the repository code 
         uses: actions/checkout@v3
-      - run: echo "$(cat hello_world.txt)"
+      - name: use nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run dev
+        
